@@ -8,26 +8,23 @@ import InputAdornment from '@mui/material/InputAdornment';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
   
-const Login = ({ setIsLogin,isLoggin }) => {
+const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [logreg, setLogreg] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-
   const handleClickShowPassword = () => setShowPassword((show) => !show);
-
+  let isLogged = localStorage.getItem("isLogged");
   useEffect(() => {
-    if(isLoggin){
+    if (isLogged === "true") {
       window.location.href = "/";
-    }
-  },[isLoggin])
-
+  }
+  })
   const handleSubmit = (e) => {
     e.preventDefault();
     handleAuth()
   };
-
     const handleAuth = () => {
     let users = JSON.parse(localStorage.getItem("users")) || [];
     if (logreg) {
@@ -35,7 +32,7 @@ const Login = ({ setIsLogin,isLoggin }) => {
       const user = users.find((u) => u.email === email && u.password === password);
       if (user) {
         setMessage("Connexion réussie !");
-        setIsLogin(true);
+        localStorage.setItem("isLogged", "true");
       } else {
         setMessage("Identifiants incorrects");
       }
@@ -68,8 +65,6 @@ const Login = ({ setIsLogin,isLoggin }) => {
                 </InputAdornment>),}}/>
       </Box>
       <br />
-      
-
       <Buttons type="submit" color="success" sx={{ textTransform: "none" }} variant="contained" onClick={handleSubmit}>
        {logreg ? "Se connecter" : "Créer un compte"}
       </Buttons>
@@ -77,7 +72,6 @@ const Login = ({ setIsLogin,isLoggin }) => {
       <p className="logtxt" onClick={() => setLogreg(!logreg)}>
         {logreg ? "Pas encore de compte ? Inscrivez-vous" : "Déjà un compte ? Connectez-vous"}
       </p>
-
       <p className="login-message">{message}</p>
     </form>
    </div>

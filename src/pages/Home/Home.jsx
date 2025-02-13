@@ -1,15 +1,18 @@
 import React from "react";
+import {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-import FadeMenu from "../Home/FadeMenu";
+import FadeMenu from "../../componant/FadeMenu/FadeMenu";
 import "./Home.css";
 
-const Home = ({ posts, setPosts, setPostToEdit, isLoggin, setIsLogin }) => {
+const Home = ({ posts, setPosts, setPostToEdit}) => {
   const navigate = useNavigate();
+  let isLoggin = localStorage.getItem("isLogged") === "true";
 
   const logout = () => {
-    setIsLogin(false);
+    localStorage.setItem("isLogged", "false");
     navigate("/login");
   };
+  
 
   const deletePost = (index) => {
     const updatedPosts = posts.filter((_, i) => i !== index);
@@ -64,10 +67,11 @@ const Home = ({ posts, setPosts, setPostToEdit, isLoggin, setIsLogin }) => {
             </div>
           ))
         ) : (
-          <p>Aucun post pour l'instant. Créez-en un !</p>
+          <p className="nopost">Aucun post pour l'instant. Créez-en un !</p>
         )}
       </div>
     </div>
+    
   );
 };
 

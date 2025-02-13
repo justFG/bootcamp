@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Urbanist', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -23,6 +23,7 @@ a:hover {
 }
 
 body {
+  background: url('./assets/background.png') no-repeat center center fixed; 
   margin: 0;
   display: flex;
   place-items: center;

@@ -1,9 +1,8 @@
 /* Style global */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('DALL·E 2025-02-10 02.27.58 - A luxurious and elegant workspace with a dark blue and black color palette. The scene features a sleek black desk with a leather-bound notebook, a sil.webp') no-repeat center center fixed; /* Image d'arrière-plan */
     background-size: cover; /* Adapter l'image à la taille de l'écran */
     color: #333;
     line-height: 1.6;

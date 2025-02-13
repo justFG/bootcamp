@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import Login from "../Login/Login";
 import { Link, useNavigate } from "react-router-dom"; // Import de useNavigate
 import "./Formulaire.css";
 
-const Formulaire = ({ onAddPost, isLoggin, setIsLogin, postToEdit }) => {
+const Formulaire = ({ onAddPost, postToEdit }) => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
@@ -10,7 +11,7 @@ const Formulaire = ({ onAddPost, isLoggin, setIsLogin, postToEdit }) => {
   const [image, setImage] = useState(null);
 
   const navigate = useNavigate(); // Instanciation de useNavigate
-
+  let isLoggin = localStorage.getItem("isLogged") === "true";
   useEffect(() => {
     if (postToEdit) {
       setTitle(postToEdit.title || "");
@@ -41,6 +42,9 @@ const Formulaire = ({ onAddPost, isLoggin, setIsLogin, postToEdit }) => {
   };
 
   return (
+    <>
+    {isLoggin ? (
+      <>
     <div className="blog-form">
       <h1>{postToEdit ? "Modifier le Post" : "Créer un Post"}</h1>
       <form onSubmit={handleSubmit}>
@@ -98,6 +102,12 @@ const Formulaire = ({ onAddPost, isLoggin, setIsLogin, postToEdit }) => {
       </form>
       <Link to="/" className="return">Revenir au menu principal</Link>
     </div>
+    </>
+     ) : (
+      <><Login /></>
+    )
+    }
+    </>
   );
 };
 

@@ -1,7 +1,8 @@
 .home {
+  margin-top: 80px;
     text-align: center;
     padding: 30px;
-    font-family: Arial, sans-serif;
+    font-family: 'Urbanist', sans-serif;
     min-height: 100vh; /* Prend toute la hauteur de l'écran */
     color: #2c3e50; /* Couleur du texte */
   }
@@ -80,25 +81,10 @@
     object-fit: cover;
   }
   /* Style pour trois cercles horizontalement alignés */
-.fade-menu-trigger {
-  display: flex; /* Aligne les cercles horizontalement */
-  gap: 5px; /* Espace entre les cercles */
-  cursor: pointer; /* Montre que l'élément est cliquable */
-  align-items: center; /* Centre verticalement si nécessaire */
-}
-
-/* Style pour chaque cercle */
-.fade-menu-trigger span {
-  width: 8px; /* Taille du cercle */
-  height: 8px; /* Taille du cercle */
-  background-color: #d4e7d8f0; /* Couleur des cercles */
-  border-radius: 50%; /* Fait un cercle parfait */
-}
-
-/* Effet au survol */
-.fade-menu-trigger:hover span {
-  background-color: #0056a6; /* Change la couleur au survol */
-}
+  .fade-menu-trigger {
+    margin-top: -30px;
+    margin-right: -5px;
+  }
 /* Conteneur principal des posts */
 .post-container {
   display: flex;
@@ -154,5 +140,8 @@
   margin-bottom: 10px;
   object-fit: cover;
 }
-
+.nopost {
+  color: #6c7e91;
+  font-weight: 700;
+}
   
