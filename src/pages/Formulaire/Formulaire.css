@@ -1,0 +1,165 @@
+/* Style global */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('DALL·E 2025-02-10 02.27.58 - A luxurious and elegant workspace with a dark blue and black color palette. The scene features a sleek black desk with a leather-bound notebook, a sil.webp') no-repeat center center fixed; /* Image d'arrière-plan */
+    background-size: cover; /* Adapter l'image à la taille de l'écran */
+    color: #333;
+    line-height: 1.6;
+    animation: fadeIn 1.5s ease-in-out;
+    display: flex; /* Flexbox sur le body */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    min-height: 100vh; /* S'assurer que le body couvre toute la hauteur de l'écran */
+}
+
+/* Animation globale */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Container principal */
+.blog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 90%; /* Largeur relative pour écrans plus petits */
+    width: 600px; /* Largeur maximale */
+    padding: 20px;
+    background: rgba(135, 135, 139, 0.155); /* Fond plus clair avec transparence */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(179, 12, 12, 0);
+    animation: slideIn 1s ease-in-out;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px 5px rgb(21, 8, 7); 
+}
+
+/* Animation pour le formulaire */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Titre principal */
+.blog-form h1 {
+    font-size: 90px; /* Taille augmentée */
+    margin: 0;
+    text-align: center;
+    color: #e1e6f5dd;
+    font-weight: 700;
+    animation: bounceIn 1.2s ease;
+}
+
+
+/* Animation du titre */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Groupes de formulaire */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Label */
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #b4d9e1ee;
+}
+
+/* Champ de saisie */
+.form-group input {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #bebdce;
+    border-radius: 5px;
+    background-color: #181517b6;
+    color: #e6dfdf;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+/* Champ de saisie au focus */
+.form-group input:focus {
+    background-color: #2b181f6e;
+    border-color: #0078d7;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 120, 215, 0.6);
+}
+
+/* Effet au survol des champs */
+.form-group input:hover {
+    background-color: #0f0d0de6;
+}
+
+/* Bouton */
+button {
+    align-self: center;
+    max-width: 300px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background: #106bb59e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #aabed068;
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: scale(0.95);
+    background: #003f7d;
+}
+
+/* Réglages pour petits écrans */
+@media (max-width: 768px) {
+    .blog-form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .blog-form h1 {
+        font-size: 20px;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
+.return {
+    text-align: right;
+}
