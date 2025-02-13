@@ -1,14 +1,25 @@
-import "./Home.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import FadeMenu from "../Home/FadeMenu";
+import "./Home.css";
 
-const Home = ({ posts,isLoggin,setIsLogin }) => {
+const Home = ({ posts, setPosts, setPostToEdit, isLoggin, setIsLogin }) => {
   const navigate = useNavigate();
 
   const logout = () => {
     setIsLogin(false);
-    navigate("/login")
-  }
+    navigate("/login");
+  };
+
+  const deletePost = (index) => {
+    const updatedPosts = posts.filter((_, i) => i !== index);
+    setPosts(updatedPosts);
+  };
+
+  const handleEdit = (post, index) => {
+    setPostToEdit({ ...post, index }); // Stocke le post à modifier avec son index
+    navigate("/formulaire"); // Redirige vers le formulaire
+  };
 
   return (
     <div className="home">
@@ -18,18 +29,38 @@ const Home = ({ posts,isLoggin,setIsLogin }) => {
           Créer un Post
         </button>
         <button className="btn" onClick={logout}>
-        {isLoggin ? "Se deconnecter" : "Se connecter"}
+          {isLoggin ? "Se déconnecter" : "Se connecter"}
         </button>
       </div>
       <div className="post-container">
         {posts && posts.length > 0 ? (
           posts.map((post, index) => (
             <div key={index} className="post-card">
-              {post.image && <img src={post.image} alt={post.title} className="post-image" />}
-              <h2>{post.title}</h2>
-              <p><strong>Auteur:</strong> {post.author}</p>
-              <p><strong>Contenu:</strong> {post.content}</p>
-              <p><strong>Tags:</strong> {post.tags}</p>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <h2>{post.title}</h2>
+                <FadeMenu
+                  onDelete={() => deletePost(index)}
+                  onEdit={() => handleEdit(post, index)} // Passe la fonction de modification
+                />
+              </div>
+              {post.image && (
+                <img src={post.image} alt={post.title} className="post-image" />
+              )}
+              <p>
+                <strong>Auteur:</strong> {post.author}
+              </p>
+              <p>
+                <strong>Contenu:</strong> {post.content}
+              </p>
+              <p>
+                <strong>Tags:</strong> {post.tags}
+              </p>
             </div>
           ))
         ) : (

@@ -1,51 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom"; // Import de useNavigate
 import "./Formulaire.css";
-import Login from "../Login/Login";
-import { Link } from "react-router-dom";
 
-const Formulaire = ({ onAddPost,isLoggin,setIsLogin }) => {
-
-
+const Formulaire = ({ onAddPost, isLoggin, setIsLogin, postToEdit }) => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
   const [tags, setTags] = useState("");
   const [image, setImage] = useState(null);
 
+  const navigate = useNavigate(); // Instanciation de useNavigate
+
+  useEffect(() => {
+    if (postToEdit) {
+      setTitle(postToEdit.title || "");
+      setAuthor(postToEdit.author || "");
+      setContent(postToEdit.content || "");
+      setTags(postToEdit.tags || "");
+      setImage(postToEdit.image || null);
+    }
+  }, [postToEdit]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const newPost = { title, author, content, tags, image };
-    onAddPost(newPost); // Ajouter le nouveau post
+    onAddPost(newPost); // Ajoute ou modifie le post
     setTitle("");
     setAuthor("");
     setContent("");
     setTags("");
     setImage(null);
-    alert("Post créé avec succès !");
-
+    navigate("/"); // Redirige vers la page d'accueil
   };
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setImage(URL.createObjectURL(file)); // Crée un aperçu de l'image
+      setImage(URL.createObjectURL(file));
     }
   };
 
   return (
-    <>
-    {isLoggin ? (
-      <>
-      <div className="blog-form">
-      <h1>Créer un Post</h1>
+    <div className="blog-form">
+      <h1>{postToEdit ? "Modifier le Post" : "Créer un Post"}</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="title">Titre</label>
           <input
             id="title"
             type="text"
-            placeholder="Entrez le titre"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
@@ -56,7 +59,6 @@ const Formulaire = ({ onAddPost,isLoggin,setIsLogin }) => {
           <input
             id="author"
             type="text"
-            placeholder="Entrez le nom de l'auteur"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
             required
@@ -64,10 +66,8 @@ const Formulaire = ({ onAddPost,isLoggin,setIsLogin }) => {
         </div>
         <div className="form-group">
           <label htmlFor="content">Contenu</label>
-          <input
+          <textarea
             id="content"
-            type="text"
-            placeholder="Entrez le contenu"
             value={content}
             onChange={(e) => setContent(e.target.value)}
             required
@@ -78,7 +78,6 @@ const Formulaire = ({ onAddPost,isLoggin,setIsLogin }) => {
           <input
             id="tags"
             type="text"
-            placeholder="Entrez les tags"
             value={tags}
             onChange={(e) => setTags(e.target.value)}
             required
@@ -86,18 +85,19 @@ const Formulaire = ({ onAddPost,isLoggin,setIsLogin }) => {
         </div>
         <div className="form-group">
           <label htmlFor="image">Image</label>
-          <input id="image" type="file" accept="image/*" onChange={handleImageChange} />
+          <input
+            id="image"
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+          />
         </div>
-        <button type="submit">Soumettre</button>
+        <button type="submit">
+          {postToEdit ? "Modifier le Post" : "Créer un Post"}
+        </button>
       </form>
-      <Link to="/" className="return">Revenir au menu principale</Link>
+      <Link to="/" className="return">Revenir au menu principal</Link>
     </div>
-      </>
-    ) : (
-      <><Login setIsLogin={setIsLogin}/></>
-    )
-    }
-    </>
   );
 };
 
