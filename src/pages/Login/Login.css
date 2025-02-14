@@ -2,7 +2,7 @@
   max-width: 400px;
   margin: 50px auto;
   padding: 20px;
-  background-color: rgba(201, 207, 221, 0.3); /* Fond avec transparence */
+  background-color: rgba(201, 207, 221, 0.3); 
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   font-family: 'Arial', sans-serif;
@@ -20,35 +20,29 @@
   margin-bottom: 20px;
 }
 
-/* --- CHAMPS INPUT --- */
 .textfieldd {
   width: 100%;
   padding: 12px;
   border: 2px solid #bdc3c7;
   border-radius: 6px;
-  background-color: #ecf0f1; /* 🌟 Changement du fond des inputs */
-  color: #2c3e50; /* Couleur du texte */
+  background-color: #ecf0f1; 
+  color: #2c3e50; 
   transition: all 0.3s ease-in-out;
 }
 
-/* --- STYLE DU LABEL DES INPUTS --- */
 .MuiInputLabel-root {
-  color: #2c3e50 !important; /* 🌟 Changement de couleur du label */
+  color: #2c3e50 !important;
 }
-
-/* --- STYLE LORSQUE L'INPUT EST FOCUS --- */
 .textfieldd:focus {
   border-color: #2980b9;
   outline: none;
   box-shadow: 0 0 6px rgba(52, 152, 219, 0.6);
   transform: scale(1.02);
 }
-
-/* --- BOUTON DE CONNEXION (Bleu foncé) --- */
 .loginsignupbutton {
   width: 100%;
   padding: 12px;
-  background-color: #0a66c2; /* 🌟 Nouvelle couleur */
+  background-color: #0a66c2;
   border: none;
   border-radius: 6px;
   color: #fff;
@@ -57,25 +51,19 @@
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
-
 .loginsignupbutton:hover {
-  background-color: #084a99; /* Bleu plus foncé au survol */
+  background-color: #084a99; 
   transform: scale(1.05);
 }
-
-/* --- TEXTE LIEN --- */
 .logtxt {
   color: #3498db;
   cursor: pointer;
   font-weight: bold;
   transition: color 0.3s ease;
 }
-
 .logtxt:hover {
   color: #010508;
 }
-
-/* --- MESSAGE D'ERREUR --- */
 .login-message {
   margin-top: 10px;
   color: #e74c3c;

@@ -3,8 +3,8 @@
     text-align: center;
     padding: 10px;
     font-family: 'Urbanist', sans-serif;
-    min-height: 100vh; /* Prend toute la hauteur de l'écran */
-    color: #b9c8d6; /* Couleur du texte */
+    min-height: 100vh;
+    color: #b9c8d6; 
   }
   
   .home-title {
@@ -17,7 +17,7 @@
     margin: 0 10px;
     padding: 10px 20px;
     font-size: 1.1rem;
-    background-color: #34495e; /* Couleur des boutons */
+    background-color: #34495e; 
     color: #ecf0f1;
     border: 1px solid #7f8c8d;
     border-radius: 6px;
@@ -78,12 +78,10 @@
     margin-bottom: 10px;
     object-fit: cover;
   }
-  /* Style pour trois cercles horizontalement alignés */
   .fade-menu-trigger {
     margin-top: -30px;
     margin-right: -5px;
   }
-/* Conteneur principal des posts */
 .post-container {
   display: flex;
   flex-wrap: wrap;
@@ -92,45 +90,41 @@
   margin-top: 20px;
 }
 
-/* Style pour chaque post */
 .post-card {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 250px; /* Largeur maximale d'un post */
+  width: 250px; 
   text-align: left;
   color: #2c3e50;
-  word-wrap: break-word; /* Force le retour à la ligne pour les mots longs */
-  overflow: hidden; /* Cache les débordements */
-  text-overflow: ellipsis; /* Ajoute des points de suspension si nécessaire */
+  word-wrap: break-word; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Ajustement pour le titre */
 .post-card h2 {
   font-size: 1.3rem;
   margin-bottom: 10px;
   color: #d5dadee2;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap; /* Si vous voulez limiter à une ligne uniquement */
+  white-space: nowrap; 
 }
 
-/* Ajustement pour les paragraphes */
 .post-card p {
   margin: 8px 0;
   color: #d0d8d8;
   font-size: 1rem;
-  word-wrap: break-word; /* Force le retour à la ligne */
-  overflow-wrap: break-word; /* Ajout de compatibilité supplémentaire */
-  line-height: 1.5; /* Améliore la lisibilité */
-  max-height: 4.5em; /* Limite l'affichage à environ 3 lignes */
-  overflow: hidden; /* Cache le texte supplémentaire */
-  text-overflow: ellipsis; /* Ajoute des points de suspension */
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  line-height: 1.5; 
+  max-height: 4.5em;
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 
-/* Image dans les posts */
 .post-image {
   width: 100%;
   height: auto;

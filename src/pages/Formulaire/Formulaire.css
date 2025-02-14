@@ -1,20 +1,19 @@
-/* Style global */
+
 body {
   font-family: "Urbanist", sans-serif;
   margin: 0;
   padding: 0;
-  background-size: cover; /* Adapter l'image à la taille de l'écran */
+  background-size: cover; 
   line-height: 1.6;
   animation: fadeIn 1.5s ease-in-out;
-  display: flex; /* Flexbox sur le body */
-  justify-content: center; /* Centrer horizontalement */
-  align-items: center; /* Centrer verticalement */
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
   background-color: #e6dbdb4d; 
   background-image: url('./IMG.jpg');
   
 }
 
-/* Animation globale */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -24,20 +23,20 @@ body {
   }
 }
 
-/* Container principal */
+
 .blog-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 90%; /* Largeur relative pour écrans plus petits */
-  width: 600px; /* Largeur maximale */
+  max-width: 90%; 
+  width: 600px; 
   padding: 20px;
   background: rgba(
     135,
     135,
     139,
     0.155
-  ); /* Fond plus clair avec transparence */
+  ); 
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(179, 12, 12, 0);
   animation: slideIn 1s ease-in-out;
@@ -46,7 +45,7 @@ body {
    
 }
 
-/* Animation pour le formulaire */
+
 @keyframes slideIn {
   from {
     transform: translateY(-20px);
@@ -58,7 +57,7 @@ body {
   }
 }
 
-/* Titre principal */
+
 .blog-form h1 {
   font-size: 70px; /* Taille augmentée */
   margin: 0;
@@ -68,7 +67,7 @@ body {
   animation: bounceIn 1.2s ease;
 }
 
-/* Animation du titre */
+
 @keyframes bounceIn {
   0% {
     transform: scale(0.9);
@@ -84,21 +83,21 @@ body {
   }
 }
 
-/* Groupes de formulaire */
+
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-/* Label */
+
 .form-group label {
   font-size: 14px;
   font-weight: bold;
   color: #e9f1f3d9;
 }
 
-/* Champ de saisie */
+
 .form-group input {
   flex: 1;
   padding: 10px;
@@ -111,7 +110,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Champ de saisie au focus */
+
 .form-group input:focus {
   background-color: #2b181f6e;
   border-color: #0078d7;
@@ -119,11 +118,11 @@ body {
   box-shadow: 0 0 8px rgba(0, 120, 215, 0.6);
 }
 
-/* Effet au survol des champs */
+
 .form-group input:hover {
   background-color: #0f0d0de6;
 }
-/* Réglages pour petits écrans */
+
 @media (max-width: 768px) {
   .blog-form {
     width: 100%;
