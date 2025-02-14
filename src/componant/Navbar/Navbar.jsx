@@ -21,7 +21,7 @@ const Navbar = ({isLoggin,logout}) => {
   return (
     <><div className="navbar">
 
-    <div><a className="logo">LOGO</a></div>
+    <div><a className="logo">POST IT</a></div>
 
     <div><a onClick={() => navigate("/formulaire")} >Create a post</a></div>
 
