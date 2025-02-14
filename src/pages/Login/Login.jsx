@@ -41,7 +41,9 @@ const Login = () => {
       }
     } else {
       // account create
-      if (users.some((u) => u.username === username)) {
+      if (!username.trim()) {
+        setMessage("Username cannot be empty");
+      } else if (users.some((u) => u.username === username)) {
         setMessage("The user already exists");
       } else {
         users.push({ username, password });
