@@ -1,39 +1,67 @@
 body {
-  margin: 0 auto;
+  margin: 0;
 }
+
 .logo {
   width: 75%;
 }
+
 .navbar {
-  width: 98.9vw;
-  background: #8D0D3E;
+  width: 98.9vw; /* Maintien de la largeur */
+  background: #0d608d; /* Couleur principale */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  height: 38px;
-  position: relative;
+  height: 38px; /* Hauteur d'origine */
+  position: sticky; /* Navbar visible au défilement */
+  top: 0; /* Fixation en haut de la page */
+  z-index: 1000; /* Priorité d'affichage élevée */
 }
-.navbar a{
-    color: #e6e6e6;
-    font-family: 'Urbanist', sans-serif;
+
+.navbar a {
+  color: #e6e6e6; /* Couleur des liens */
+  font-family: 'Urbanist', sans-serif;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
 }
+
+.navbar a:hover {
+  color: #ffffff; /* Couleur des liens au survol */
+}
+
 .navbar button {
-    width: 100%;
+  background: #e74c3c; /* Rouge pour les boutons */
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px; /* Ajustement des dimensions */
+  border-radius: 4px; /* Coins légèrement arrondis */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
+
+.navbar button:hover {
+  background: #c0392b; /* Rouge plus foncé au survol */
+  transform: scale(1.05); /* Effet visuel au survol */
+}
+
 .navbar-text {
-  color: #e6e6e6;
+  color: #e6e6e6; /* Texte de la navbar */
   margin-right: 5px;
 }
+
 .navbar-username {
-  color: #e6e6e6;
+  color: #e6e6e6; /* Couleur du nom d'utilisateur */
   font-weight: 500;
 }
+
 .navlog {
-  width: 110px;
+  width: 110px; /* Taille du bouton */
 }
+
 .navbar > div {
-  width: calc(100% / 4);
+  width: calc(100% / 4); /* Division uniforme en colonnes */
   text-align: center;
   display: flex;
   align-items: center;
@@ -50,5 +78,5 @@ body {
 .navbar > div > img:hover,
 .navbar > div > p:hover,
 .navbar > div > a:hover {
-  color: var(--hover);
+  color: #ffffff;
 }

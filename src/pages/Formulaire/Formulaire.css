@@ -9,7 +9,9 @@ body {
   display: flex; /* Flexbox sur le body */
   justify-content: center; /* Centrer horizontalement */
   align-items: center; /* Centrer verticalement */
-  min-height: 100vh; /* S'assurer que le body couvre toute la hauteur de l'écran */
+  background-color: #e6dbdb4d; 
+  background-image: url('./IMG.jpg');
+  
 }
 
 /* Animation globale */
@@ -40,7 +42,8 @@ body {
   box-shadow: 0 4px 6px rgba(179, 12, 12, 0);
   animation: slideIn 1s ease-in-out;
   box-sizing: border-box;
-  box-shadow: 0 0 20px 5px rgb(21, 8, 7);
+  box-shadow: 0 0 20px 5px rgba(30, 7, 5, 0.734);
+   
 }
 
 /* Animation pour le formulaire */
@@ -60,7 +63,7 @@ body {
   font-size: 70px; /* Taille augmentée */
   margin: 0;
   text-align: center;
-  color: #e1e6f5dd;
+  color: #eef0f5e1;
   font-weight: 700;
   animation: bounceIn 1.2s ease;
 }
@@ -92,7 +95,7 @@ body {
 .form-group label {
   font-size: 14px;
   font-weight: bold;
-  color: #b4d9e1ee;
+  color: #e9f1f3d9;
 }
 
 /* Champ de saisie */

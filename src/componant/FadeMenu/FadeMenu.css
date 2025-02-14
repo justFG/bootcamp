@@ -1,4 +1,9 @@
 .custom-menu {
-    background-color: #8D0D3E !important;
-    color: white !important;
+    background-color: #17111494 !important;
+    color: rgb(230, 238, 242) !important;
+    
   }
+  .iconmenu svg {
+    color: white !important; /* Change la couleur des 3 points */
+  }
+  
