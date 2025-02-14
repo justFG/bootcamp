@@ -40,6 +40,12 @@ const Formulaire = ({ onAddPost, postToEdit }) => {
       setImage(URL.createObjectURL(file));
     }
   };
+  
+  let loggedInUsername = localStorage.getItem("loggedInUser");
+  useEffect(() => {
+    setAuthor(loggedInUsername)
+  })
+ 
 
   return (
     <>
@@ -64,7 +70,7 @@ const Formulaire = ({ onAddPost, postToEdit }) => {
             id="author"
             type="text"
             value={author}
-            onChange={(e) => setAuthor(e.target.value)}
+            onChange={(e) => setAuthor(loggedInUsername)}
             required
           />
         </div>
