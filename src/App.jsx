@@ -35,6 +35,7 @@ function App() {
         <Route path="/" element={<Home posts={posts} setPosts={setPosts} setPostToEdit={setPostToEdit}/>}/>
         <Route path="/formulaire" element={<Formulaire onAddPost={addPost} postToEdit={postToEdit}/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="*" element={<Home posts={posts} setPosts={setPosts} setPostToEdit={setPostToEdit}/>}/>
       </Routes>
     </Router>
   );

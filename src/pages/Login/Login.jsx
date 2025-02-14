@@ -7,18 +7,20 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { useNavigate } from "react-router-dom";
   
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [logreg, setLogreg] = useState(true);
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   let isLogged = localStorage.getItem("isLogged");
+  const navigate = useNavigate();
   useEffect(() => {
     if (isLogged === "true") {
-      window.location.href = "/";
+      navigate("/");
   }
   })
   const handleSubmit = (e) => {
@@ -29,48 +31,49 @@ const Login = () => {
     let users = JSON.parse(localStorage.getItem("users")) || [];
     if (logreg) {
       // log in
-      const user = users.find((u) => u.email === email && u.password === password);
+      const user = users.find((u) => u.username === username && u.password === password);
       if (user) {
-        setMessage("Connexion réussie !");
+        localStorage.setItem("loggedInUser", user.username);
+        setMessage("Login successful!");
         localStorage.setItem("isLogged", "true");
       } else {
-        setMessage("Identifiants incorrects");
+        setMessage("Incorrect credentials");
       }
     } else {
       // account create
-      if (users.some((u) => u.email === email)) {
-        setMessage("L'utilisateur existe déjà");
+      if (users.some((u) => u.username === username)) {
+        setMessage("The user already exists");
       } else {
-        users.push({ email, password });
+        users.push({ username, password });
         localStorage.setItem("users", JSON.stringify(users));
-        setMessage("Compte créé avec succès !");
+        setMessage("Account successfully created!");
         setLogreg(true);
-        setEmail("");
+        setUsername("");
         setPassword("");
       }
     }};
   return (
    <div className="login-container">
     <form className="login-form" onSubmit={handleSubmit}>
-      <h2>{logreg ? "Connexion" : "Inscription"}</h2>
+      <h2>{logreg ? "Login" : "Create an account"}</h2>
       <Box className="inputlog" noValidate autoComplete="off">
-              <TextField type="text" label="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+          <TextField className="textfieldd" type="text" label="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
       </Box>
       <br />
       <Box className="inputlog" noValidate autoComplete="off">
-              <TextField type={showPassword ? 'text' : 'password'} label="Password" value={password} onChange={(e) => setPassword(e.target.value)}
-                InputProps={{ endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton onClick={handleClickShowPassword} edge="end">{showPassword ? <VisibilityOff /> : <Visibility />}</IconButton>
-                </InputAdornment>),}}/>
+        <TextField className="textfieldd" type={showPassword ? 'text' : 'password'} label="Password" value={password} onChange={(e) => setPassword(e.target.value)}
+          slotProps={{input: { endAdornment: (
+            <InputAdornment position="end">
+              <IconButton onClick={handleClickShowPassword} edge="end">{showPassword ? <VisibilityOff /> : <Visibility />}</IconButton>
+            </InputAdornment>),},}}/>
       </Box>
       <br />
-      <Buttons type="submit" color="success" sx={{ textTransform: "none" }} variant="contained" onClick={handleSubmit}>
-       {logreg ? "Se connecter" : "Créer un compte"}
+      <Buttons className="loginsignupbutton" type="submit" color="success" sx={{ textTransform: "none" }} variant="contained" onClick={handleSubmit}>
+       {logreg ? "Log in" : "Sign up"}
       </Buttons>
 
       <p className="logtxt" onClick={() => setLogreg(!logreg)}>
-        {logreg ? "Pas encore de compte ? Inscrivez-vous" : "Déjà un compte ? Connectez-vous"}
+        {logreg ? "Don't have an account yet? Sign up" : "Already have an account? Log in"}
       </p>
       <p className="login-message">{message}</p>
     </form>

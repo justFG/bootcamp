@@ -1,19 +1,15 @@
 .home {
-  margin-top: 80px;
+    margin-top: 20px;
     text-align: center;
-    padding: 30px;
+    padding: 10px;
     font-family: 'Urbanist', sans-serif;
     min-height: 100vh; /* Prend toute la hauteur de l'écran */
     color: #2c3e50; /* Couleur du texte */
   }
   
   .home-title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     color: #e1e4e8;
-    margin-bottom: 30px;
-  }
-  
-  .button-container {
     margin-bottom: 30px;
   }
   
@@ -47,7 +43,8 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 200px;
+    max-height: 350px;
     text-align: left;
     color: #2c3e50;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -100,7 +97,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px; /* Largeur maximale d'un post */
+  width: 250px; /* Largeur maximale d'un post */
   text-align: left;
   color: #2c3e50;
   word-wrap: break-word; /* Force le retour à la ligne pour les mots longs */

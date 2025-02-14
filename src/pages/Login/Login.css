@@ -1,11 +1,12 @@
 .login-container {
-    max-width: 400px;
+  width: 280px;
     margin: 50px auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    background-color: #ffffff06;
   }
   
   .login-container h1 {
@@ -22,7 +23,7 @@
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
-    color: #333;
+    color: rgba(255, 255, 255, 0.676);
   } 
   .logtxt {
     cursor: pointer;
@@ -31,3 +32,11 @@
   .login-message{
     color:rgba(231, 230, 230, 0.858);
   }
+  .textfieldd {
+    width: 230px;
+    background-color: #cacaca0f;
+    border-radius: 5px;
+  }
+.loginsignupbutton {
+  width: 100px;
+}

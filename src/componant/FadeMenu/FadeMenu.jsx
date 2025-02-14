@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Tooltip from '@mui/material/Tooltip';
+import './FadeMenu.css'
 
 const FadeMenu = ({ onDelete, onEdit }) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -44,12 +45,18 @@ const FadeMenu = ({ onDelete, onEdit }) => {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
+        disableScrollLock={true}
+        slotProps={{
+          paper: {
+            className: "custom-menu",
+          },
+        }}
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleEdit}>Modifier</MenuItem>
-        <MenuItem onClick={handleDelete}>Supprimer</MenuItem>
+        <MenuItem onClick={handleEdit}>Edit</MenuItem>
+        <MenuItem onClick={handleDelete}>Delete</MenuItem>
       </Menu>
     </div>
   </div>

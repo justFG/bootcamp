@@ -1,7 +1,7 @@
 import React from "react";
-import {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import FadeMenu from "../../componant/FadeMenu/FadeMenu";
+import Navbar from "../../componant/Navbar/Navbar"
 import "./Home.css";
 
 const Home = ({ posts, setPosts, setPostToEdit}) => {
@@ -10,6 +10,7 @@ const Home = ({ posts, setPosts, setPostToEdit}) => {
 
   const logout = () => {
     localStorage.setItem("isLogged", "false");
+    localStorage.setItem("loggedInUser", "null");
     navigate("/login");
   };
   
@@ -25,16 +26,11 @@ const Home = ({ posts, setPosts, setPostToEdit}) => {
   };
 
   return (
+    <>
+    <Navbar isLoggin={isLoggin} logout={logout}/>
     <div className="home">
-      <h1 className="home-title">Bienvenue sur notre application</h1>
-      <div className="button-container">
-        <button className="btn" onClick={() => navigate("/formulaire")}>
-          Créer un Post
-        </button>
-        <button className="btn" onClick={logout}>
-          {isLoggin ? "Se déconnecter" : "Se connecter"}
-        </button>
-      </div>
+      
+      <h1 className="home-title">Welcome to our website</h1>
       <div className="post-container">
         {posts && posts.length > 0 ? (
           posts.map((post, index) => (
@@ -56,10 +52,10 @@ const Home = ({ posts, setPosts, setPostToEdit}) => {
                 <img src={post.image} alt={post.title} className="post-image" />
               )}
               <p>
-                <strong>Auteur:</strong> {post.author}
+                <strong>Author:</strong> {post.author}
               </p>
               <p>
-                <strong>Contenu:</strong> {post.content}
+                <strong>Content:</strong> {post.content}
               </p>
               <p>
                 <strong>Tags:</strong> {post.tags}
@@ -67,11 +63,11 @@ const Home = ({ posts, setPosts, setPostToEdit}) => {
             </div>
           ))
         ) : (
-          <p className="nopost">Aucun post pour l'instant. Créez-en un !</p>
+          <p className="nopost">No posts yet. Create one!</p>
         )}
       </div>
     </div>
-    
+    </>
   );
 };
 

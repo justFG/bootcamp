@@ -1,0 +1,54 @@
+body {
+  margin: 0 auto;
+}
+.logo {
+  width: 75%;
+}
+.navbar {
+  width: 98.9vw;
+  background: #8D0D3E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  height: 38px;
+  position: relative;
+}
+.navbar a{
+    color: #e6e6e6;
+    font-family: 'Urbanist', sans-serif;
+}
+.navbar button {
+    width: 100%;
+}
+.navbar-text {
+  color: #e6e6e6;
+  margin-right: 5px;
+}
+.navbar-username {
+  color: #e6e6e6;
+  font-weight: 500;
+}
+.navlog {
+  width: 110px;
+}
+.navbar > div {
+  width: calc(100% / 4);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar > div > img,
+.navbar > div > p,
+.navbar > div > a {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar > div > img:hover,
+.navbar > div > p:hover,
+.navbar > div > a:hover {
+  color: var(--hover);
+}

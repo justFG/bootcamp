@@ -46,10 +46,10 @@ const Formulaire = ({ onAddPost, postToEdit }) => {
     {isLoggin ? (
       <>
     <div className="blog-form">
-      <h1>{postToEdit ? "Modifier le Post" : "Créer un Post"}</h1>
+      <h1>{postToEdit ? "Edit Post" : "Create a Post"}</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="title">Titre</label>
+          <label htmlFor="title">Title</label>
           <input
             id="title"
             type="text"
@@ -59,7 +59,7 @@ const Formulaire = ({ onAddPost, postToEdit }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="author">Auteur</label>
+          <label htmlFor="author">Author</label>
           <input
             id="author"
             type="text"
@@ -69,7 +69,7 @@ const Formulaire = ({ onAddPost, postToEdit }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="content">Contenu</label>
+          <label htmlFor="content">Content</label>
           <textarea
             id="content"
             value={content}
@@ -96,11 +96,11 @@ const Formulaire = ({ onAddPost, postToEdit }) => {
             onChange={handleImageChange}
           />
         </div>
-        <button type="submit">
-          {postToEdit ? "Modifier le Post" : "Créer un Post"}
+        <button className="form-submit" type="submit">
+          {postToEdit ? "Edit Post" : "Create a Post"}
         </button>
       </form>
-      <Link to="/" className="return">Revenir au menu principal</Link>
+      <Link to="/" className="return">Return to the homepage</Link>
     </div>
     </>
      ) : (
