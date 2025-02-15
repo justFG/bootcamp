@@ -39,6 +39,9 @@ body {
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
 }
+.navbar button:hover {
+  transform: scale(1.03);
+}
 
 
 .navbar-text {
