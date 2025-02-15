@@ -45,8 +45,6 @@ const Formulaire = ({ onAddPost, postToEdit }) => {
   useEffect(() => {
     setAuthor(loggedInUsername)
   })
- 
-
   return (
     <>
     {isLoggin ? (
@@ -108,6 +106,10 @@ const Formulaire = ({ onAddPost, postToEdit }) => {
       </form>
       <Link to="/" className="return">Return to the homepage</Link>
     </div>
+    <br/>
+    <br/>
+    <br/>
+    
     </>
      ) : (
       <><Login /></>
