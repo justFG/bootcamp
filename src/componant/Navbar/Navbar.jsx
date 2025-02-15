@@ -23,11 +23,14 @@ const Navbar = ({isLoggin,logout}) => {
 
     <div><a className="logo">POST IT</a></div>
 
-    <div><a onClick={() => navigate("/formulaire")} >Create a post</a></div>
+    
 
     <div></div>
     <div></div>
-    
+    <div></div>
+    <div></div>
+    <div></div>
+    <div><a onClick={() => navigate("/formulaire")} >Create a post</a></div>
 
     <div>{isLoggin ? (<><p className="navbar-text" onclick="window.location.href = 'https://watch-anime.fr/settings';">logged as:</p><h3 className="navbar-username">{currentuser}</h3></>) : (<p className="navbar-text"></p>)}</div>
 
@@ -53,7 +56,7 @@ const Navbar = ({isLoggin,logout}) => {
    
     </div>
 
-    </div>
+  </div>
     
         
 </div></>
