@@ -32,7 +32,6 @@ body {
 }
 
 .navbar button {
-  background: #e74c3c;
   color: #ffffff;
   border: none;
   padding: 6px 12px;
@@ -41,10 +40,6 @@ body {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.navbar button:hover {
-  background: #c0392b;
-  transform: scale(1.05);
-}
 
 .navbar-text {
   color: #e6e6e6;
